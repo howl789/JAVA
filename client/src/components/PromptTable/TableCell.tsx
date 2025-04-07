@@ -42,7 +42,7 @@ export const TableCell: React.FC<TableCellProps> = ({
             value={cell.value as string[]}
             onChange={onCellChange}
             onAddOption={onAddOption}
-            tagColorClass={column.id === 'negativePrompts' ? "bg-[#ffded9] text-[#8B0000] dark:bg-[#3a1a1a] dark:text-[#ffded9]" : "bg-[#F5F0E6] text-[#333333] dark:bg-[#1e3a45] dark:text-[#F5F0E6]"}
+            tagColorClass={column.id === 'negativePrompts' ? "bg-[#ffded9] text-[#8B0000] dark:bg-[#3a1a1a] dark:text-[#ffded9]" : "bg-[#F5F0E6] text-[#8B7355] dark:bg-[#1e3a45] dark:text-[#F5F0E6]"}
             negativeTag={column.id === 'negativePrompts'}
           />
         )}

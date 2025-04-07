@@ -14,7 +14,7 @@
   :root {
     --bg-cream: #F5F0E6;
     --heading-green: #3A5A40;
-    --text-charcoal: #333333;
+    --text-beige: #8B7355;
     --border-terracotta: #CC7351;
     --link-gold: #D4A017;
     --accent-indigo: #264653;
@@ -39,7 +39,7 @@
   }
   
   .tag {
-    @apply dark:bg-[#1e3a45] dark:text-[#F5F0E6] bg-[#F5F0E6] text-[#333333] px-2 py-1 rounded-md;
+    @apply dark:bg-[#1e3a45] dark:text-[#F5F0E6] bg-[#F5F0E6] text-[#8B7355] px-2 py-1 rounded-md;
   }
   
   .dropdown-menu {
@@ -59,7 +59,7 @@
   }
   
   .secondary-button {
-    @apply border-[#CC7351] dark:border-[#CC7351] text-[#333333] dark:text-[#F5F0E6] hover:bg-[#F5F0E6] dark:hover:bg-[#1e3a45] transition-colors;
+    @apply border-[#CC7351] dark:border-[#CC7351] text-[#8B7355] dark:text-[#F5F0E6] hover:bg-[#F5F0E6] dark:hover:bg-[#1e3a45] transition-colors;
   }
   
   .card-container {
@@ -71,6 +71,6 @@
   }
   
   .body-text {
-    @apply text-[#333333] dark:text-[#F5F0E6];
+    @apply text-[#8B7355] dark:text-[#F5F0E6];
   }
 }
