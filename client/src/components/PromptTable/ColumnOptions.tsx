@@ -41,7 +41,7 @@ export const ColumnOptions: React.FC<ColumnOptionsProps> = ({
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="text-slate-500 hover:text-slate-700 dark:text-slate-400 dark:hover:text-slate-200">
+          <button className="text-[#121212] hover:text-[#ff6b6b] dark:text-[#e6dfd1] dark:hover:text-[#ff6b6b]">
             <MoreHorizontal className="h-4 w-4" />
           </button>
         </DropdownMenuTrigger>
@@ -53,9 +53,9 @@ export const ColumnOptions: React.FC<ColumnOptionsProps> = ({
       </DropdownMenu>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-md">
+        <DialogContent className="sm:max-w-md bg-[#f5f3ed] dark:bg-[#1a1a1a] text-[#121212] dark:text-[#e6dfd1] border-[#c8bfa9] dark:border-[#2a2a2a]">
           <DialogHeader>
-            <DialogTitle>Add option to {column.name}</DialogTitle>
+            <DialogTitle className="text-[#121212] dark:text-[#e6dfd1]">Add option to {column.name}</DialogTitle>
           </DialogHeader>
           <div className="py-4">
             <Input
@@ -65,13 +65,14 @@ export const ColumnOptions: React.FC<ColumnOptionsProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter') handleAddOption();
               }}
+              className="bg-white dark:bg-[#121212] border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1]"
             />
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setIsDialogOpen(false)}>
+            <Button variant="outline" onClick={() => setIsDialogOpen(false)} className="border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1]">
               Cancel
             </Button>
-            <Button onClick={handleAddOption}>
+            <Button onClick={handleAddOption} className="bg-[#ff6b6b] hover:bg-[#ff8787] text-white">
               Add
             </Button>
           </DialogFooter>

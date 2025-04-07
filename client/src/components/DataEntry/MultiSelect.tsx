@@ -86,7 +86,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
           </div>
         ))}
         <button 
-          className="text-sm text-primary-600 dark:text-primary-400 hover:underline p-1"
+          className="text-sm text-[#ff6b6b] hover:underline p-1"
           onClick={handleOpenDropdown}
         >
           + Add
@@ -94,13 +94,13 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
       </div>
 
       {isOpen && (
-        <div className="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-md shadow-lg max-h-60 overflow-y-auto">
+        <div className="dropdown-menu absolute z-50 w-full mt-1 bg-white dark:bg-[#121212] border border-[#c8bfa9] dark:border-[#2a2a2a] rounded-md shadow-lg max-h-60 overflow-y-auto">
           {options
             .filter(option => !value.includes(option))
             .map((option, index) => (
               <div
                 key={index}
-                className="p-2 hover:bg-slate-100 dark:hover:bg-gray-700 cursor-pointer"
+                className="p-2 hover:bg-[#f5f3ed] dark:hover:bg-[#1f1f1f] cursor-pointer text-[#121212] dark:text-[#e6dfd1]"
                 onClick={() => handleSelect(option)}
               >
                 {option}
@@ -110,7 +110,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
           {onAddOption && (
             <>
               {isAddingNew ? (
-                <div className="p-2 border-t border-slate-200 dark:border-gray-700">
+                <div className="p-2 border-t border-[#c8bfa9] dark:border-[#2a2a2a]">
                   <div className="flex">
                     <Input
                       type="text"
@@ -124,12 +124,12 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                           setNewOption('');
                         }
                       }}
-                      className="flex-1 h-8 text-sm"
+                      className="flex-1 h-8 text-sm bg-white dark:bg-[#121212] border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1]"
                       autoFocus
                     />
                     <Button 
                       size="sm" 
-                      className="ml-1 h-8"
+                      className="ml-1 h-8 bg-[#ff6b6b] hover:bg-[#ff8787] text-white"
                       onClick={handleAddOption}
                     >
                       Add
@@ -138,7 +138,7 @@ export const MultiSelect: React.FC<MultiSelectProps> = ({
                 </div>
               ) : (
                 <div
-                  className="p-2 text-primary-600 dark:text-primary-400 hover:bg-slate-100 dark:hover:bg-gray-700 cursor-pointer flex items-center border-t border-slate-200 dark:border-gray-700"
+                  className="p-2 text-[#ff6b6b] hover:bg-[#f5f3ed] dark:hover:bg-[#1f1f1f] cursor-pointer flex items-center border-t border-[#c8bfa9] dark:border-[#2a2a2a]"
                   onClick={() => setIsAddingNew(true)}
                 >
                   <Plus className="h-4 w-4 mr-1" /> Add new option

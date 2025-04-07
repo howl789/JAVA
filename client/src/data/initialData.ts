@@ -168,8 +168,18 @@ export const exportFormats: ExportFormat[] = [
 ];
 
 export const themePresets = [
-  { name: 'Cyberpunk City', settings: { subject: 'Girl', setting: 'Cyberpunk city', lighting: 'Neon' } },
-  { name: 'Peaceful Shrine', settings: { setting: 'Shrine', mood: 'Peaceful', extraTags: ['Cherry blossoms'] } },
-  { name: 'Magic Academy', settings: { setting: 'School', extraTags: ['Magical effects'] } },
-  { name: 'Space Exploration', settings: { setting: 'Space station', lighting: 'Dramatic' } }
+  { 
+    name: 'Ultimate Anime Preset', 
+    settings: { 
+      subject: 'Girl',
+      style: 'Modern Anime', 
+      setting: 'Tokyo at night', 
+      mood: 'Mystical',
+      lighting: 'Neon',
+      camera: 'Dutch angle',
+      extraTags: ['Cherry blossoms', 'Magical effects', 'Sparkles'],
+      artistStyle: 'Makoto Shinkai',
+      negativePrompts: ['Blurry', 'Low-res', 'Bad anatomy']
+    } 
+  }
 ];

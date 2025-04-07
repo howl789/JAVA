@@ -21,20 +21,20 @@ export const PromptTable: React.FC<PromptTableProps> = ({
   onAddColumnOption
 }) => {
   return (
-    <div className="border border-slate-200 dark:border-gray-750 rounded-lg overflow-hidden mb-6">
+    <div className="border border-[#c8bfa9] dark:border-[#2a2a2a] rounded-lg overflow-hidden mb-6 shadow-sm">
       <div className="table-wrapper overflow-x-auto">
         <table className="w-full border-collapse min-w-[1000px]">
-          <thead className="bg-slate-100 dark:bg-gray-800 sticky top-0 z-10">
+          <thead className="bg-[#e6dfd1] dark:bg-[#1a1a1a] sticky top-0 z-10">
             <tr>
-              <th className="p-0 border-b border-r border-slate-200 dark:border-gray-750 w-10">
-                <div className="p-2 text-left font-medium text-slate-700 dark:text-slate-300 flex justify-center items-center">
+              <th className="p-0 border-b border-r border-[#c8bfa9] dark:border-[#2a2a2a] w-10">
+                <div className="p-2 text-left font-medium text-[#121212] dark:text-[#e6dfd1] flex justify-center items-center">
                   #
                 </div>
               </th>
               
               {columns.map((column) => (
-                <th key={column.id} className="p-0 border-b border-r border-slate-200 dark:border-gray-750 min-w-[150px]">
-                  <div className="p-2 text-left font-medium text-slate-700 dark:text-slate-300 flex justify-between items-center">
+                <th key={column.id} className="p-0 border-b border-r border-[#c8bfa9] dark:border-[#2a2a2a] min-w-[150px]">
+                  <div className="p-2 text-left font-medium text-[#121212] dark:text-[#e6dfd1] flex justify-between items-center">
                     <span>{column.name}</span>
                     <ColumnOptions 
                       column={column}
@@ -48,9 +48,9 @@ export const PromptTable: React.FC<PromptTableProps> = ({
           
           <tbody>
             {rows.map((row) => (
-              <tr key={row.id} data-row-id={row.id} className="group/row">
-                <td className="p-0 border-b border-r border-slate-200 dark:border-gray-750 bg-slate-50 dark:bg-gray-850 text-center">
-                  <div className="table-cell-content p-2 text-sm text-slate-500 dark:text-slate-400">
+              <tr key={row.id} data-row-id={row.id} className="group/row hover:bg-[#f5f3ed] dark:hover:bg-[#1f1f1f]">
+                <td className="p-0 border-b border-r border-[#c8bfa9] dark:border-[#2a2a2a] bg-[#f5f3ed] dark:bg-[#121212] text-center">
+                  <div className="table-cell-content p-2 text-sm text-[#121212] dark:text-[#e6dfd1]">
                     {row.id}
                   </div>
                 </td>

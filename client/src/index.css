@@ -10,4 +10,52 @@
   body {
     @apply font-sans antialiased bg-background text-foreground;
   }
+
+  :root {
+    --anime-black: #121212;
+    --anime-beige: #e6dfd1;
+    --anime-beige-darker: #c8bfa9;
+    --anime-accent: #ff6b6b;
+  }
+  
+  .dark {
+    --background: var(--anime-black);
+    --foreground: var(--anime-beige);
+    --card: #1a1a1a;
+    --card-foreground: var(--anime-beige);
+    --popover: #1a1a1a;
+    --popover-foreground: var(--anime-beige);
+    --border: #2a2a2a;
+    --input: #2a2a2a;
+  }
+}
+
+@layer components {
+  .table-cell-content {
+    @apply dark:bg-[#1a1a1a] bg-[#f5f3ed];
+  }
+  
+  .tag {
+    @apply dark:bg-[#2a2a2a] dark:text-[#e6dfd1] bg-[#e6dfd1] text-[#121212] px-2 py-1;
+  }
+  
+  .dropdown-menu {
+    @apply dark:bg-[#1a1a1a] bg-[#f5f3ed] dark:border-[#2a2a2a];
+  }
+  
+  .anime-gradient-text {
+    @apply bg-gradient-to-r from-[#ff6b6b] to-[#ffa06b] text-transparent bg-clip-text;
+  }
+  
+  .primary-button {
+    @apply bg-[#ff6b6b] hover:bg-[#ff8787] text-white transition-colors;
+  }
+  
+  .secondary-button {
+    @apply border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1] hover:bg-[#e6dfd1] dark:hover:bg-[#2a2a2a] transition-colors;
+  }
+  
+  .card-container {
+    @apply bg-[#f5f3ed] dark:bg-[#1a1a1a] border border-[#c8bfa9] dark:border-[#2a2a2a] rounded-lg p-4 shadow-sm;
+  }
 }

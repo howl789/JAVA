@@ -40,14 +40,14 @@ export const PromptPreview: React.FC<PromptPreviewProps> = ({ row, aiModel }) =>
   };
   
   return (
-    <div className="bg-slate-100 dark:bg-gray-850 rounded-lg p-4 mb-6">
+    <div className="bg-[#f5f3ed] dark:bg-[#1a1a1a] rounded-lg p-4 mb-6 shadow-sm">
       <div className="flex justify-between items-center mb-2">
-        <h2 className="font-semibold text-lg">Prompt Preview</h2>
+        <h2 className="font-semibold text-lg text-[#121212] dark:text-[#e6dfd1]">Prompt Preview</h2>
         <div className="flex space-x-2">
           <Button 
             onClick={handleCopy}
             disabled={!row}
-            className="px-3 py-1 bg-primary-600 text-white rounded-md hover:bg-primary-700 transition-colors flex items-center text-sm"
+            className="px-3 py-1 bg-[#ff6b6b] text-white rounded-md hover:bg-[#ff8787] transition-colors flex items-center text-sm"
           >
             {isCopied ? (
               <>
@@ -63,7 +63,7 @@ export const PromptPreview: React.FC<PromptPreviewProps> = ({ row, aiModel }) =>
           </Button>
         </div>
       </div>
-      <div className="font-mono text-sm bg-white dark:bg-gray-800 p-3 rounded border border-slate-200 dark:border-gray-700 whitespace-pre-wrap break-all">
+      <div className="font-mono text-sm bg-white dark:bg-[#121212] p-3 rounded border border-[#c8bfa9] dark:border-[#2a2a2a] whitespace-pre-wrap break-all text-[#121212] dark:text-[#e6dfd1]">
         {promptText}
       </div>
     </div>
