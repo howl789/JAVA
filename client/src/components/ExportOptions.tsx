@@ -1,8 +1,4 @@
 import React, { useState } from 'react';
-import { 
-  RadioGroup, 
-  RadioGroupItem 
-} from '@/components/ui/radio-group';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import { Button } from '@/components/ui/button';
@@ -22,11 +18,11 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
   onApplyThemePreset
 }) => {
   const { toast } = useToast();
-  const [selectedFormat, setSelectedFormat] = useState(exportFormats[0].id);
   const [selectedModels, setSelectedModels] = useState<Record<string, boolean>>({
     midjourney: true,
     dalle: false,
-    leonardo: false
+    leonardo: false,
+    other: false
   });
 
   const handleExport = () => {
@@ -39,14 +35,13 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
       return;
     }
 
-    const format = exportFormats.find(f => f.id === selectedFormat);
-    if (format) {
-      exportData(rows, format, activeAiModel);
-      toast({
-        title: "Export successful",
-        description: `Your prompts have been exported as ${format.name}.`
-      });
-    }
+    // Default to CSV format
+    const format = exportFormats[0];
+    exportData(rows, format, activeAiModel);
+    toast({
+      title: "Export successful",
+      description: `Your prompts have been exported as ${format.name}.`
+    });
   };
 
   const handleModelToggle = (modelId: string, checked: boolean) => {
@@ -67,21 +62,6 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
   return (
     <div className="flex flex-wrap gap-4">
       <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
-        <h3 className="font-medium mb-3 heading-text">Export Format</h3>
-        <RadioGroup value={selectedFormat} onValueChange={setSelectedFormat}>
-          {exportFormats.map(format => (
-            <div className="flex items-center space-x-2 py-1" key={format.id}>
-              <RadioGroupItem value={format.id} id={`format-${format.id}`} className="border-[#CC7351] text-[#D4A017]" />
-              <Label htmlFor={`format-${format.id}`} className="body-text">{format.name}</Label>
-            </div>
-          ))}
-        </RadioGroup>
-        <Button onClick={handleExport} className="w-full mt-4 primary-button">
-          Export
-        </Button>
-      </div>
-      
-      <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
         <h3 className="font-medium mb-3 heading-text">AI Tool Formatting</h3>
         <div className="flex flex-col space-y-2">
           {aiModels.map(model => (
@@ -97,7 +77,24 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
               </Label>
             </div>
           ))}
+          
+          {/* Other option */}
+          <div className="flex items-center space-x-2">
+            <Checkbox 
+              id="model-other" 
+              checked={selectedModels.other} 
+              onCheckedChange={(checked) => handleModelToggle('other', checked as boolean)}
+              className="border-[#CC7351] data-[state=checked]:bg-[#CC7351] data-[state=checked]:text-white"
+            />
+            <Label htmlFor="model-other" className="body-text">
+              Other
+            </Label>
+          </div>
         </div>
+        
+        <Button onClick={handleExport} className="w-full mt-4 primary-button">
+          Export
+        </Button>
       </div>
       
       <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
