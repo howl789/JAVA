@@ -22,7 +22,7 @@ export const TableCell: React.FC<TableCellProps> = ({
 }) => {
   return (
     <td 
-      className={`p-0 border-b border-r border-[#c8bfa9] dark:border-[#2a2a2a] ${isSelected ? 'cursor-cell' : ''} ${isSelected ? 'bg-[#fdf8ea] dark:bg-[#1f1f1f]' : ''}`}
+      className={`p-0 border-b border-r border-[#CC7351] dark:border-[#CC7351] ${isSelected ? 'cursor-cell' : ''} ${isSelected ? 'bg-white dark:bg-[#213f4a]' : ''}`}
       onClick={onCellClick}
     >
       <div className="table-cell-content relative p-1">
@@ -42,7 +42,7 @@ export const TableCell: React.FC<TableCellProps> = ({
             value={cell.value as string[]}
             onChange={onCellChange}
             onAddOption={onAddOption}
-            tagColorClass={column.id === 'negativePrompts' ? "bg-[#ffcccc] text-[#600000] dark:bg-[#3a1a1a] dark:text-[#ffcccc]" : "bg-[#e6dfd1] text-[#121212] dark:bg-[#2a2a2a] dark:text-[#e6dfd1]"}
+            tagColorClass={column.id === 'negativePrompts' ? "bg-[#ffded9] text-[#8B0000] dark:bg-[#3a1a1a] dark:text-[#ffded9]" : "bg-[#F5F0E6] text-[#333333] dark:bg-[#1e3a45] dark:text-[#F5F0E6]"}
             negativeTag={column.id === 'negativePrompts'}
           />
         )}

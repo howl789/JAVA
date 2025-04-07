@@ -12,50 +12,65 @@
   }
 
   :root {
-    --anime-black: #121212;
-    --anime-beige: #e6dfd1;
-    --anime-beige-darker: #c8bfa9;
-    --anime-accent: #ff6b6b;
+    --bg-cream: #F5F0E6;
+    --heading-green: #3A5A40;
+    --text-charcoal: #333333;
+    --border-terracotta: #CC7351;
+    --link-gold: #D4A017;
+    --accent-indigo: #264653;
+    --accent-gold: #D4A017;
   }
   
   .dark {
-    --background: var(--anime-black);
-    --foreground: var(--anime-beige);
-    --card: #1a1a1a;
-    --card-foreground: var(--anime-beige);
-    --popover: #1a1a1a;
-    --popover-foreground: var(--anime-beige);
-    --border: #2a2a2a;
-    --input: #2a2a2a;
+    --background: #264653;
+    --foreground: #F5F0E6;
+    --card: #1e3a45;
+    --card-foreground: #F5F0E6;
+    --popover: #1e3a45;
+    --popover-foreground: #F5F0E6;
+    --border: #CC7351;
+    --input: #1e3a45;
   }
 }
 
 @layer components {
   .table-cell-content {
-    @apply dark:bg-[#1a1a1a] bg-[#f5f3ed];
+    @apply dark:bg-[#1e3a45] bg-[#F5F0E6];
   }
   
   .tag {
-    @apply dark:bg-[#2a2a2a] dark:text-[#e6dfd1] bg-[#e6dfd1] text-[#121212] px-2 py-1;
+    @apply dark:bg-[#1e3a45] dark:text-[#F5F0E6] bg-[#F5F0E6] text-[#333333] px-2 py-1 rounded-md;
   }
   
   .dropdown-menu {
-    @apply dark:bg-[#1a1a1a] bg-[#f5f3ed] dark:border-[#2a2a2a];
+    @apply dark:bg-[#1e3a45] bg-[#F5F0E6] dark:border-[#CC7351] border-[#CC7351];
   }
   
-  .anime-gradient-text {
-    @apply bg-gradient-to-r from-[#ff6b6b] to-[#ffa06b] text-transparent bg-clip-text;
+  .heading-text {
+    @apply text-[#3A5A40] dark:text-[#F5F0E6] font-semibold;
+  }
+  
+  .gradient-text {
+    @apply bg-gradient-to-r from-[#3A5A40] to-[#D4A017] text-transparent bg-clip-text;
   }
   
   .primary-button {
-    @apply bg-[#ff6b6b] hover:bg-[#ff8787] text-white transition-colors;
+    @apply bg-[#CC7351] hover:bg-[#ba6346] text-white transition-colors;
   }
   
   .secondary-button {
-    @apply border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1] hover:bg-[#e6dfd1] dark:hover:bg-[#2a2a2a] transition-colors;
+    @apply border-[#CC7351] dark:border-[#CC7351] text-[#333333] dark:text-[#F5F0E6] hover:bg-[#F5F0E6] dark:hover:bg-[#1e3a45] transition-colors;
   }
   
   .card-container {
-    @apply bg-[#f5f3ed] dark:bg-[#1a1a1a] border border-[#c8bfa9] dark:border-[#2a2a2a] rounded-lg p-4 shadow-sm;
+    @apply bg-[#F5F0E6] dark:bg-[#1e3a45] border border-[#CC7351] dark:border-[#CC7351] rounded-lg p-4 shadow-sm;
+  }
+  
+  .accent-text {
+    @apply text-[#D4A017] dark:text-[#D4A017];
+  }
+  
+  .body-text {
+    @apply text-[#333333] dark:text-[#F5F0E6];
   }
 }

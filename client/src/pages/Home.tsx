@@ -65,25 +65,25 @@ const Home: React.FC = () => {
     <div className="container mx-auto p-4">
       {/* Header */}
       <header className="mb-6">
-        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 bg-[#f5f3ed] dark:bg-[#1a1a1a] p-4 rounded-lg shadow-sm">
-          <h1 className="text-2xl font-bold bg-gradient-to-r from-[#ff6b6b] to-[#ffa06b] text-transparent bg-clip-text">
+        <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-4 bg-[#F5F0E6] dark:bg-[#264653] p-4 rounded-lg shadow-sm border border-[#CC7351] dark:border-[#CC7351]">
+          <h1 className="text-3xl font-bold gradient-text">
             Anime Prompt Table Generator
           </h1>
           <div className="flex items-center space-x-3 mt-3 md:mt-0">
             <ThemeToggle />
-            <Button className="px-3 py-2 bg-[#ff6b6b] text-white rounded-md hover:bg-[#ff8787] transition-colors flex items-center">
+            <Button className="px-3 py-2 primary-button rounded-md flex items-center">
               <Settings className="h-4 w-4 mr-2" />
               <span>Settings</span>
             </Button>
           </div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#f5f3ed] dark:bg-[#1a1a1a] p-4 rounded-lg shadow-sm">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4 bg-[#F5F0E6] dark:bg-[#264653] p-4 rounded-lg shadow-sm border border-[#CC7351] dark:border-[#CC7351]">
           <div className="col-span-2">
             <div className="flex flex-wrap gap-2">
               <Button
                 onClick={addRow}
-                className="px-3 py-2 bg-[#ff6b6b] text-white rounded-md hover:bg-[#ff8787] transition-colors flex items-center"
+                className="px-3 py-2 primary-button rounded-md flex items-center"
               >
                 <PlusCircle className="h-4 w-4 mr-2" />
                 <span>Add Row</span>
@@ -92,7 +92,7 @@ const Home: React.FC = () => {
               <Button
                 onClick={handleDeleteRow}
                 variant="outline"
-                className="px-3 py-2 border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1] rounded-md hover:bg-[#e6dfd1] dark:hover:bg-[#2a2a2a] transition-colors flex items-center"
+                className="px-3 py-2 secondary-button rounded-md flex items-center"
               >
                 <Trash2 className="h-4 w-4 mr-2" />
                 <span>Delete Row</span>
@@ -104,7 +104,7 @@ const Home: React.FC = () => {
                   description: "Please use the export options section below."
                 })}
                 variant="outline"
-                className="px-3 py-2 border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1] rounded-md hover:bg-[#e6dfd1] dark:hover:bg-[#2a2a2a] transition-colors flex items-center"
+                className="px-3 py-2 secondary-button rounded-md flex items-center"
               >
                 <Download className="h-4 w-4 mr-2" />
                 <span>Export</span>
@@ -116,7 +116,7 @@ const Home: React.FC = () => {
                   description: "Import functionality will be added in a future update."
                 })}
                 variant="outline"
-                className="px-3 py-2 border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1] rounded-md hover:bg-[#e6dfd1] dark:hover:bg-[#2a2a2a] transition-colors flex items-center"
+                className="px-3 py-2 secondary-button rounded-md flex items-center"
               >
                 <Upload className="h-4 w-4 mr-2" />
                 <span>Import</span>
@@ -126,14 +126,14 @@ const Home: React.FC = () => {
           
           <div className="col-span-1">
             <div className="flex items-center space-x-2">
-              <span className="text-sm text-[#121212] dark:text-[#e6dfd1]">AI Model:</span>
+              <span className="text-sm heading-text">AI Model:</span>
               <Select value={activeAiModel} onValueChange={setActiveAiModel}>
-                <SelectTrigger className="bg-white dark:bg-[#121212] rounded-md border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1] focus:ring-2 focus:ring-[#ff6b6b] outline-none">
+                <SelectTrigger className="bg-white dark:bg-[#1e3a45] rounded-md border-[#CC7351] dark:border-[#CC7351] body-text focus:ring-2 focus:ring-[#D4A017] outline-none">
                   <SelectValue placeholder="Select AI Model" />
                 </SelectTrigger>
-                <SelectContent className="bg-white dark:bg-[#121212] border-[#c8bfa9] dark:border-[#2a2a2a]">
+                <SelectContent className="bg-white dark:bg-[#1e3a45] border-[#CC7351] dark:border-[#CC7351]">
                   {aiModels.map(model => (
-                    <SelectItem key={model.id} value={model.id} className="text-[#121212] dark:text-[#e6dfd1]">
+                    <SelectItem key={model.id} value={model.id} className="body-text">
                       {model.name}
                     </SelectItem>
                   ))}

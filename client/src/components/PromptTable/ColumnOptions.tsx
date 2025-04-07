@@ -41,7 +41,7 @@ export const ColumnOptions: React.FC<ColumnOptionsProps> = ({
     <>
       <DropdownMenu>
         <DropdownMenuTrigger asChild>
-          <button className="text-[#121212] hover:text-[#ff6b6b] dark:text-[#e6dfd1] dark:hover:text-[#ff6b6b]">
+          <button className="text-[#333333] hover:text-[#D4A017] dark:text-[#F5F0E6] dark:hover:text-[#D4A017]">
             <MoreHorizontal className="h-4 w-4" />
           </button>
         </DropdownMenuTrigger>
@@ -53,9 +53,9 @@ export const ColumnOptions: React.FC<ColumnOptionsProps> = ({
       </DropdownMenu>
 
       <Dialog open={isDialogOpen} onOpenChange={setIsDialogOpen}>
-        <DialogContent className="sm:max-w-md bg-[#f5f3ed] dark:bg-[#1a1a1a] text-[#121212] dark:text-[#e6dfd1] border-[#c8bfa9] dark:border-[#2a2a2a]">
+        <DialogContent className="sm:max-w-md bg-[#F5F0E6] dark:bg-[#264653] body-text border-[#CC7351] dark:border-[#CC7351]">
           <DialogHeader>
-            <DialogTitle className="text-[#121212] dark:text-[#e6dfd1]">Add option to {column.name}</DialogTitle>
+            <DialogTitle className="heading-text">Add option to {column.name}</DialogTitle>
           </DialogHeader>
           <div className="py-4">
             <Input
@@ -65,14 +65,14 @@ export const ColumnOptions: React.FC<ColumnOptionsProps> = ({
               onKeyDown={(e) => {
                 if (e.key === 'Enter') handleAddOption();
               }}
-              className="bg-white dark:bg-[#121212] border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1]"
+              className="bg-white dark:bg-[#1e3a45] border-[#CC7351] dark:border-[#CC7351] body-text"
             />
           </div>
           <DialogFooter>
-            <Button variant="outline" onClick={() => setIsDialogOpen(false)} className="border-[#c8bfa9] dark:border-[#2a2a2a] text-[#121212] dark:text-[#e6dfd1]">
+            <Button variant="outline" onClick={() => setIsDialogOpen(false)} className="secondary-button">
               Cancel
             </Button>
-            <Button onClick={handleAddOption} className="bg-[#ff6b6b] hover:bg-[#ff8787] text-white">
+            <Button onClick={handleAddOption} className="primary-button">
               Add
             </Button>
           </DialogFooter>

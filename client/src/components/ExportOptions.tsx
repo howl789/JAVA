@@ -66,23 +66,23 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
 
   return (
     <div className="flex flex-wrap gap-4">
-      <div className="bg-[#f5f3ed] dark:bg-[#1a1a1a] rounded-lg shadow-sm p-4 flex-1 min-w-[250px]">
-        <h3 className="font-medium mb-3 text-[#121212] dark:text-[#e6dfd1]">Export Format</h3>
+      <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
+        <h3 className="font-medium mb-3 heading-text">Export Format</h3>
         <RadioGroup value={selectedFormat} onValueChange={setSelectedFormat}>
           {exportFormats.map(format => (
             <div className="flex items-center space-x-2 py-1" key={format.id}>
-              <RadioGroupItem value={format.id} id={`format-${format.id}`} className="border-[#ff6b6b] text-[#ff6b6b]" />
-              <Label htmlFor={`format-${format.id}`} className="text-[#121212] dark:text-[#e6dfd1]">{format.name}</Label>
+              <RadioGroupItem value={format.id} id={`format-${format.id}`} className="border-[#CC7351] text-[#D4A017]" />
+              <Label htmlFor={`format-${format.id}`} className="body-text">{format.name}</Label>
             </div>
           ))}
         </RadioGroup>
-        <Button onClick={handleExport} className="w-full mt-4 bg-[#ff6b6b] hover:bg-[#ff8787] text-white">
+        <Button onClick={handleExport} className="w-full mt-4 primary-button">
           Export
         </Button>
       </div>
       
-      <div className="bg-[#f5f3ed] dark:bg-[#1a1a1a] rounded-lg shadow-sm p-4 flex-1 min-w-[250px]">
-        <h3 className="font-medium mb-3 text-[#121212] dark:text-[#e6dfd1]">AI Tool Formatting</h3>
+      <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
+        <h3 className="font-medium mb-3 heading-text">AI Tool Formatting</h3>
         <div className="flex flex-col space-y-2">
           {aiModels.map(model => (
             <div className="flex items-center space-x-2" key={model.id}>
@@ -90,9 +90,9 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
                 id={`model-${model.id}`} 
                 checked={selectedModels[model.id]} 
                 onCheckedChange={(checked) => handleModelToggle(model.id, checked as boolean)}
-                className="border-[#c8bfa9] data-[state=checked]:bg-[#ff6b6b] data-[state=checked]:text-white"
+                className="border-[#CC7351] data-[state=checked]:bg-[#CC7351] data-[state=checked]:text-white"
               />
-              <Label htmlFor={`model-${model.id}`} className="text-[#121212] dark:text-[#e6dfd1]">
+              <Label htmlFor={`model-${model.id}`} className="body-text">
                 {model.name}{model.formatString ? ` (${model.formatString})` : ''}
               </Label>
             </div>
@@ -100,13 +100,13 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
         </div>
       </div>
       
-      <div className="bg-[#f5f3ed] dark:bg-[#1a1a1a] rounded-lg shadow-sm p-4 flex-1 min-w-[250px]">
-        <h3 className="font-medium mb-3 text-[#121212] dark:text-[#e6dfd1]">Anime Theme Preset</h3>
+      <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
+        <h3 className="font-medium mb-3 heading-text">Anime Theme Preset</h3>
         <div className="flex justify-center">
           {themePresets.map((preset, index) => (
             <Button 
               key={index}
-              className="p-3 w-full bg-[#ff6b6b] hover:bg-[#ff8787] text-white rounded-md transition-colors flex items-center justify-center font-medium"
+              className="p-3 w-full primary-button rounded-md flex items-center justify-center font-medium"
               onClick={() => handlePresetClick(preset)}
             >
               <span className="mr-2">✨</span>
