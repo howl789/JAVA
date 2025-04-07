@@ -146,6 +146,11 @@ export const aiModels: AIModel[] = [
     id: 'leonardo',
     name: 'Leonardo.ai',
     formatString: ''
+  },
+  {
+    id: 'other',
+    name: 'Other',
+    formatString: ''
   }
 ];
 
