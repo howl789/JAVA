@@ -31,6 +31,12 @@ export interface ExportFormat {
 
 export const columns: Column[] = [
   {
+    id: 'productType',
+    name: 'Digital Product',
+    type: 'dropdown',
+    options: ['Art Print', 'Digital Wallpaper', 'Book Illustration', 'NFT/Digital Collectible', 'Social Media Content', 'Video Thumbnail', 'Character Design', 'Other']
+  },
+  {
     id: 'subject',
     name: 'Subject',
     type: 'dropdown',
@@ -90,6 +96,7 @@ export const initialRows: PromptRow[] = [
   {
     id: '1',
     cells: [
+      { columnId: 'productType', value: 'Art Print' },
       { columnId: 'subject', value: 'Girl' },
       { columnId: 'style', value: 'Cel shading' },
       { columnId: 'setting', value: 'Tokyo at night' },
@@ -104,6 +111,7 @@ export const initialRows: PromptRow[] = [
   {
     id: '2',
     cells: [
+      { columnId: 'productType', value: 'Digital Wallpaper' },
       { columnId: 'subject', value: 'Mecha' },
       { columnId: 'style', value: '90s Anime' },
       { columnId: 'setting', value: 'Floating Islands' },
@@ -118,6 +126,7 @@ export const initialRows: PromptRow[] = [
   {
     id: '3',
     cells: [
+      { columnId: 'productType', value: 'Character Design' },
       { columnId: 'subject', value: 'Kitsune' },
       { columnId: 'style', value: 'Watercolor' },
       { columnId: 'setting', value: 'Shrine' },
@@ -211,6 +220,7 @@ export const themePresets = [
   { 
     name: 'Ultimate Anime Preset', 
     settings: { 
+      productType: 'Character Design',
       subject: 'Girl',
       style: 'Modern Anime', 
       setting: 'Tokyo at night', 
