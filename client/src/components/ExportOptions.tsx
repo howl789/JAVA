@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Label } from '@/components/ui/label';
-import { Checkbox } from '@/components/ui/checkbox';
+import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Button } from '@/components/ui/button';
 import { exportFormats, aiModels, themePresets } from '@/data/initialData';
 import { exportData } from '@/lib/exportUtils';
@@ -18,12 +18,7 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
   onApplyThemePreset
 }) => {
   const { toast } = useToast();
-  const [selectedModels, setSelectedModels] = useState<Record<string, boolean>>({
-    midjourney: true,
-    dalle: false,
-    leonardo: false,
-    other: false
-  });
+  const [selectedModelId, setSelectedModelId] = useState<string>("midjourney");
 
   const handleExport = () => {
     if (rows.length === 0) {
@@ -44,13 +39,6 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
     });
   };
 
-  const handleModelToggle = (modelId: string, checked: boolean) => {
-    setSelectedModels(prev => ({
-      ...prev,
-      [modelId]: checked
-    }));
-  };
-
   const handlePresetClick = (preset: any) => {
     onApplyThemePreset(preset.settings);
     toast({
@@ -63,34 +51,24 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
     <div className="flex flex-wrap gap-4">
       <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
         <h3 className="font-medium mb-3 heading-text">AI Tool Formatting</h3>
-        <div className="flex flex-col space-y-2">
+        <RadioGroup 
+          value={selectedModelId} 
+          onValueChange={setSelectedModelId}
+          className="flex flex-col space-y-2"
+        >
           {aiModels.map(model => (
             <div className="flex items-center space-x-2" key={model.id}>
-              <Checkbox 
-                id={`model-${model.id}`} 
-                checked={selectedModels[model.id]} 
-                onCheckedChange={(checked) => handleModelToggle(model.id, checked as boolean)}
-                className="border-[#CC7351] data-[state=checked]:bg-[#CC7351] data-[state=checked]:text-white"
+              <RadioGroupItem 
+                value={model.id} 
+                id={`model-${model.id}`}
+                className="border-[#CC7351] text-[#CC7351]"
               />
               <Label htmlFor={`model-${model.id}`} className="body-text">
                 {model.name}{model.formatString ? ` (${model.formatString})` : ''}
               </Label>
             </div>
           ))}
-          
-          {/* Other option */}
-          <div className="flex items-center space-x-2">
-            <Checkbox 
-              id="model-other" 
-              checked={selectedModels.other} 
-              onCheckedChange={(checked) => handleModelToggle('other', checked as boolean)}
-              className="border-[#CC7351] data-[state=checked]:bg-[#CC7351] data-[state=checked]:text-white"
-            />
-            <Label htmlFor="model-other" className="body-text">
-              Other
-            </Label>
-          </div>
-        </div>
+        </RadioGroup>
         
         <Button onClick={handleExport} className="w-full mt-4 primary-button">
           Export
