@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Button } from '@/components/ui/button';
-import { exportFormats, aiModels, themePresets } from '@/data/initialData';
+import { exportFormats, aiModels, themePresets, digitalProductTypes } from '@/data/initialData';
 import { exportData } from '@/lib/exportUtils';
 import { useToast } from '@/hooks/use-toast';
 
@@ -19,6 +19,7 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
 }) => {
   const { toast } = useToast();
   const [selectedModelId, setSelectedModelId] = useState<string>("midjourney");
+  const [selectedProductType, setSelectedProductType] = useState<string>("art-print");
 
   const handleExport = () => {
     if (rows.length === 0) {
@@ -73,6 +74,28 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
         <Button onClick={handleExport} className="w-full mt-4 primary-button">
           Export
         </Button>
+      </div>
+      
+      <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">
+        <h3 className="font-medium mb-3 heading-text">Digital Product Type</h3>
+        <RadioGroup 
+          value={selectedProductType} 
+          onValueChange={setSelectedProductType}
+          className="flex flex-col space-y-2"
+        >
+          {digitalProductTypes.map(product => (
+            <div className="flex items-center space-x-2" key={product.id}>
+              <RadioGroupItem 
+                value={product.id} 
+                id={`product-${product.id}`}
+                className="border-[#CC7351] text-[#CC7351]"
+              />
+              <Label htmlFor={`product-${product.id}`} className="body-text">
+                {product.name}
+              </Label>
+            </div>
+          ))}
+        </RadioGroup>
       </div>
       
       <div className="bg-[#F5F0E6] dark:bg-[#264653] rounded-lg shadow-sm p-4 flex-1 min-w-[250px] border border-[#CC7351] dark:border-[#CC7351]">

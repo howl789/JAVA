@@ -154,6 +154,41 @@ export const aiModels: AIModel[] = [
   }
 ];
 
+export const digitalProductTypes = [
+  {
+    id: 'art-print',
+    name: 'Art Print'
+  },
+  {
+    id: 'wallpaper',
+    name: 'Digital Wallpaper'
+  },
+  {
+    id: 'illustration',
+    name: 'Book Illustration'
+  },
+  {
+    id: 'nft',
+    name: 'NFT/Digital Collectible'
+  },
+  {
+    id: 'social-media',
+    name: 'Social Media Content'
+  },
+  {
+    id: 'thumbnail',
+    name: 'Video Thumbnail'
+  },
+  {
+    id: 'character-design',
+    name: 'Character Design'
+  },
+  {
+    id: 'other',
+    name: 'Other'
+  }
+];
+
 export const exportFormats: ExportFormat[] = [
   {
     id: 'txt',
