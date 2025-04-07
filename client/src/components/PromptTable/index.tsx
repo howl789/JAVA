@@ -48,7 +48,7 @@ export const PromptTable: React.FC<PromptTableProps> = ({
           
           <tbody>
             {rows.map((row) => (
-              <tr key={row.id} data-row-id={row.id} className="group/row hover:bg-[#F5F0E6] dark:hover:bg-[#1e3a45]">
+              <tr key={row.id} data-row-id={row.id} className="bg-[#F5F0E6] group/row hover:bg-[#F5F0E6] dark:bg-[#1e3a45] dark:hover:bg-[#264653]">
                 <td className="p-0 border-b border-r border-[#CC7351] dark:border-[#CC7351] bg-[#F5F0E6] dark:bg-[#1e3a45] text-center">
                   <div className="table-cell-content p-2 text-sm body-text">
                     {row.id}

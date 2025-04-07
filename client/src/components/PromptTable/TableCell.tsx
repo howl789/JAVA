@@ -22,7 +22,7 @@ export const TableCell: React.FC<TableCellProps> = ({
 }) => {
   return (
     <td 
-      className={`p-0 border-b border-r border-[#CC7351] dark:border-[#CC7351] ${isSelected ? 'cursor-cell' : ''} ${isSelected ? 'bg-white dark:bg-[#213f4a]' : ''}`}
+      className={`p-0 border-b border-r border-[#CC7351] dark:border-[#CC7351] ${isSelected ? 'cursor-cell' : ''} ${isSelected ? 'bg-[#F5F0E6] dark:bg-[#213f4a]' : 'bg-[#F5F0E6] dark:bg-[#1e3a45]'}`}
       onClick={onCellClick}
     >
       <div className="table-cell-content relative p-1">

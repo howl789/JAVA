@@ -38,6 +38,14 @@
     @apply dark:bg-[#1e3a45] bg-[#F5F0E6];
   }
   
+  tr:nth-child(odd) {
+    @apply bg-[#F5F0E6];
+  }
+  
+  tr:nth-child(even) {
+    @apply bg-[#F5F0E6];
+  }
+  
   .tag {
     @apply dark:bg-[#1e3a45] dark:text-[#F5F0E6] bg-[#F5F0E6] text-[#8B7355] px-2 py-1 rounded-md;
   }
