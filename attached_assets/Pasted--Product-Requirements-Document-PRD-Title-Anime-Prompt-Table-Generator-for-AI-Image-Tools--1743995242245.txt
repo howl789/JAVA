@@ -1,0 +1,71 @@
+📄 Product Requirements Document (PRD)
+🧠 Title
+Anime Prompt Table Generator for AI Image Tools
+
+🏁 Objective
+Build a highly interactive, Google Sheets-style interface where users can easily craft detailed, structured prompts for anime-themed image generation. The tool should offer dropdown lists, pre-filled values, and easy export/copy of complete prompts — optimized for use with Midjourney and similar AI models.
+
+🌐 Tech Stack
+Agnostic — Implementation can be done in any frontend framework (React, Vue, Svelte, etc.).
+If using UI components, consider integration with ShadCN (Tailwind-based) or similar design system for clean UI.
+
+🧩 Core Features
+1. Spreadsheet-style Interface
+Rows: individual prompts
+
+Columns: customizable prompt components
+
+Behaves like a simple spreadsheet (editable cells, row-based prompts)
+
+2. Prompt Component Columns
+Column Name	Function	Input Type	Sample Options
+Subject	Main focus of the image	Dropdown	Girl, Boy, Mecha, Kitsune, Warrior
+Style	Artistic rendering style	Dropdown	Cel shading, Watercolor, 90s Anime
+Setting/Environment	Scene background or location	Dropdown	Tokyo at night, Shrine, Floating Islands
+Mood/Emotion	Emotional tone of the image	Dropdown	Peaceful, Mysterious, Angry
+Lighting	Light environment	Dropdown	Neon, Sunset, Overcast, Firelight
+Camera Angle	Perspective or framing	Dropdown	Close-up, Bird’s-eye, Dutch angle
+Extra Tags	Enhancements and style keywords	Multi-select	Sparkles, Rain, Cherry blossoms
+Artist Style	Stylistic inspiration	Dropdown	Makoto Shinkai, Ghibli, Retro aesthetic
+Negative Prompts	Words to avoid undesirable outputs	Multi-select	Ugly, Blurry, Low-res, Extra limbs
+3. Prompt Assembly Engine
+Automatically concatenates selected options into a coherent AI-ready prompt
+
+Includes real-time preview
+
+Copy-to-clipboard function
+
+Optional download as .txt or .csv
+
+🖌️ UX Requirements
+Clean, accessible UI with clear labels and intuitive interactions
+
+Allow for custom additions (e.g., users can add their own dropdown values)
+
+Add/remove rows dynamically
+
+Dark mode (optional)
+
+Sticky header for column labels
+
+📤 Export & Integration
+Export options: .csv, .txt, or copy as string
+
+Optional: Connect to Google Sheets API for syncing
+
+Ready-to-use formatting for tools like:
+
+Midjourney (--v 5 --ar 16:9)
+
+DALL·E
+
+Leonardo.ai
+
+🚀 Future Add-ons (Optional)
+AI-powered autocomplete suggestions based on theme
+
+Prompt history tracking
+
+Midjourney webhook integration
+
+Theme presets (e.g., “Cyberpunk City”, “Peaceful Shrine”, etc.)
