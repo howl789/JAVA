@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Label } from '@/components/ui/label';
 import { RadioGroup, RadioGroupItem } from '@/components/ui/radio-group';
 import { Button } from '@/components/ui/button';
+import { Download } from 'lucide-react';
 import { exportFormats, aiModels, themePresets } from '@/data/initialData';
 import { exportData } from '@/lib/exportUtils';
 import { useToast } from '@/hooks/use-toast';
@@ -70,8 +71,9 @@ export const ExportOptions: React.FC<ExportOptionsProps> = ({
           ))}
         </RadioGroup>
         
-        <Button onClick={handleExport} className="w-full mt-4 primary-button">
-          Export
+        <Button onClick={handleExport} className="w-full mt-4 primary-button font-medium">
+          <Download className="h-4 w-4 mr-2" />
+          Export Prompts
         </Button>
       </div>
       

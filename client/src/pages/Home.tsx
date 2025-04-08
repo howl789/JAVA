@@ -92,9 +92,9 @@ const Home: React.FC = () => {
               <Button
                 onClick={handleDeleteRow}
                 variant="outline"
-                className="px-3 py-2 secondary-button rounded-md flex items-center"
+                className="px-3 py-2 secondary-button-emphasized rounded-md flex items-center"
               >
-                <Trash2 className="h-4 w-4 mr-2" />
+                <Trash2 className="h-4 w-4 mr-2 text-[#3A5A40] dark:text-[#D4A017]" />
                 <span>Delete Row</span>
               </Button>
               
@@ -104,9 +104,9 @@ const Home: React.FC = () => {
                   description: "Please use the export options section below."
                 })}
                 variant="outline"
-                className="px-3 py-2 secondary-button rounded-md flex items-center"
+                className="px-3 py-2 secondary-button-emphasized rounded-md flex items-center"
               >
-                <Download className="h-4 w-4 mr-2" />
+                <Download className="h-4 w-4 mr-2 text-[#3A5A40] dark:text-[#D4A017]" />
                 <span>Export</span>
               </Button>
               
@@ -116,9 +116,9 @@ const Home: React.FC = () => {
                   description: "Import functionality will be added in a future update."
                 })}
                 variant="outline"
-                className="px-3 py-2 secondary-button rounded-md flex items-center"
+                className="px-3 py-2 secondary-button-emphasized rounded-md flex items-center"
               >
-                <Upload className="h-4 w-4 mr-2" />
+                <Upload className="h-4 w-4 mr-2 text-[#3A5A40] dark:text-[#D4A017]" />
                 <span>Import</span>
               </Button>
             </div>

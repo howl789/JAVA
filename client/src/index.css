@@ -70,6 +70,10 @@
     @apply border-[#CC7351] dark:border-[#CC7351] text-[#8B7355] dark:text-[#F5F0E6] hover:bg-[#F5F0E6] dark:hover:bg-[#1e3a45] transition-colors;
   }
   
+  .secondary-button-emphasized {
+    @apply border-[#CC7351] dark:border-[#CC7351] text-[#3A5A40] dark:text-[#D4A017] hover:bg-[#F5F0E6] dark:hover:bg-[#1e3a45] transition-colors font-medium;
+  }
+  
   .card-container {
     @apply bg-[#F5F0E6] dark:bg-[#1e3a45] border border-[#CC7351] dark:border-[#CC7351] rounded-lg p-4 shadow-sm;
   }
